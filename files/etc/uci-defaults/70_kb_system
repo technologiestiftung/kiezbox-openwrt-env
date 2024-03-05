@@ -97,11 +97,11 @@ kb_config_network() {
 	# Setup management VLAN
 	[ "$(uci -q get network.@bridge-vlan[-1].vlan)" != "254" ] && {
 		#TODO: see above
-		bridge-vlan=$(uci add network bridge-vlan)
+		bridge_vlan=$(uci add network bridge-vlan)
 		uci -q batch <<-EOF
-			set network.${bridge-vlan}.vlan='254'
-			set network.${bridge-vlan}.device='br-main'
-			add_list network.${bridge-vlan}.ports='bat0:t'
+			set network.${bridge_vlan}.vlan='254'
+			set network.${bridge_vlan}.device='br-main'
+			add_list network.${bridge_vlan}.ports='bat0:t'
 		EOF
 	}
 	## Setup mesh management Interface
@@ -120,11 +120,11 @@ kb_config_network() {
 	# Setup disctict specific VLAN
 	[ "$(uci -q get network.@bridge-vlan[-1].vlan)" != "${dist_nr}" ] && {
 		#TODO: see above
-		bridge-vlan=$(uci add network bridge-vlan)
+		bridge_vlan=$(uci add network bridge-vlan)
 		uci -q batch <<-EOF
-			set network.${bridge-vlan}.vlan='${vlant_dist}'
-			set network.${bridge-vlan}.device='br-main'
-			add_list network.${bridge-vlan}.ports='bat0:t'
+			set network.${bridge_vlan}.vlan='${vlant_dist}'
+			set network.${bridge_vlan}.device='br-main'
+			add_list network.${bridge_vlan}.ports='bat0:t'
 		EOF
 	}
 	## Setup mesh public Interface
@@ -154,7 +154,8 @@ kb_config_network() {
 			set wireless.kbmesh0.mesh_rssi_threshold='0'
 			set wireless.kbmesh0.key='${kb_psk}'
 			set wireless.kbmesh0.network='batmesh'
-			set wireless.kbmesh0.ifname='kb-11s-0'
+			set wireless.kbmesh0.ifname='m-11s-0'
+			set wireless.radio0.disabled=''
 		EOF
 	}
 
@@ -223,7 +224,7 @@ esac
 if [ "${board_supported}" = true ] ; then
 	kb_config_system
 	kb_config_network
-        uci commit
+	uci commit
 	echo "kb: configuration finished!"
 else
 	echo "kb: board ${board} not supported!"
