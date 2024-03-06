@@ -11,14 +11,15 @@ kb_config_system() {
 		# Device specific setup
 		case "${eth0_mac}" in
 		## Devices in Schoeneberg (0701)
-		### Bananpi R3 (TSB R01)
-		'f6:5b:12:bd:e9:f9')
+		### Bananpi R3 used for tests (TSB R01)
+		#### SDCARD MAC
+		'3e:ed:3b:2e:f8:85')
 			state="t"
 			dist="71"
 			uid="01"
 			uid_name="TSB R01"
 		;;
-		### Gl.inet AR300M (TSB R02)
+		### Gl.inet AR300M used for tests (TSB R02)
 		'94:83:c4:41:18:56')
 			state="t"
 			dist="71"
@@ -117,6 +118,7 @@ kb_config_network() {
 			set network.mesh_mgmt.defaultroute='0'
 		EOF
 	}
+
 	# Setup disctict specific VLAN
 	[ "$(uci -q get network.@bridge-vlan[-1].vlan)" != "${dist_nr}" ] && {
 		#TODO: see above
@@ -141,6 +143,7 @@ kb_config_network() {
 
 	# Setup wireless interfaces
 	## Setup mesh interface
+	## TODO: We currently assume radio0 is on the 2g band. improve this to find the 2g radio and mesh there
 	local kb_ssid="$(uci -q get kb.main.ssid)"
 	local kb_psk="$(uci -q get kb.main.psk)"
 	[ -n "$(uci -q get wireless.radio0)" -a "$(uci -q get wireless.radio0.band)" = "2g" ] && {
@@ -155,8 +158,12 @@ kb_config_network() {
 			set wireless.kbmesh0.key='${kb_psk}'
 			set wireless.kbmesh0.network='batmesh'
 			set wireless.kbmesh0.ifname='m-11s-0'
-			set wireless.radio0.disabled=''
 		EOF
+		# Delete default APs if needed
+		uci -q del wireless.default_radio0
+		uci -q del wireless.default_radio1
+		# Enable wireless radio
+		uci set wireless.radio0.disabled=''
 	}
 
 	# Setup Firewall
