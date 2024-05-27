@@ -22,24 +22,12 @@ CONFIG_KERNEL_BUILD_DOMAIN="buildhost"
 CONFIG_KERNEL_BUILD_USER="builder"
 # CONFIG_KERNEL_KALLSYMS is not set
 CONFIG_MAKE_TOOLCHAIN=y
-CONFIG_OPENSSL_ENGINE=y
-CONFIG_OPENSSL_WITH_ASM=y
-CONFIG_OPENSSL_WITH_CHACHA_POLY1305=y
-CONFIG_OPENSSL_WITH_CMS=y
-CONFIG_OPENSSL_WITH_DEPRECATED=y
-CONFIG_OPENSSL_WITH_ERROR_MESSAGES=y
-CONFIG_OPENSSL_WITH_IDEA=y
-CONFIG_OPENSSL_WITH_MDC2=y
-CONFIG_OPENSSL_WITH_PSK=y
-CONFIG_OPENSSL_WITH_SEED=y
-CONFIG_OPENSSL_WITH_SRP=y
-CONFIG_OPENSSL_WITH_TLS13=y
-CONFIG_OPENSSL_WITH_WHIRLPOOL=y
+# CONFIG_PACKAGE_batctl-default is not set
 CONFIG_PACKAGE_batctl-full=y
 CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_cgi-io=y
 CONFIG_PACKAGE_e2fsprogs=y
-CONFIG_PACKAGE_fdisk=m
+CONFIG_PACKAGE_fdisk=y
 CONFIG_PACKAGE_ip-bridge=y
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_iputils-ping=y
@@ -68,16 +56,15 @@ CONFIG_PACKAGE_libcomerr=y
 CONFIG_PACKAGE_libelf=m
 CONFIG_PACKAGE_libevent2-core=y
 CONFIG_PACKAGE_libext2fs=y
-CONFIG_PACKAGE_libfdisk=m
+CONFIG_PACKAGE_libfdisk=y
 CONFIG_PACKAGE_libiperf3=y
 CONFIG_PACKAGE_liblucihttp=y
 CONFIG_PACKAGE_liblucihttp-ucode=y
 CONFIG_PACKAGE_libncurses=y
-CONFIG_PACKAGE_libopenssl=m
 CONFIG_PACKAGE_libpcap=y
 CONFIG_PACKAGE_libpcre=m
 CONFIG_PACKAGE_librt=y
-CONFIG_PACKAGE_libsmartcols=m
+CONFIG_PACKAGE_libsmartcols=y
 CONFIG_PACKAGE_libss=y
 CONFIG_PACKAGE_libstdcpp=y
 CONFIG_PACKAGE_libuuid=y
@@ -97,7 +84,6 @@ CONFIG_PACKAGE_luci-proto-ppp=y
 CONFIG_PACKAGE_luci-ssl=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
 CONFIG_PACKAGE_mesh11sd=y
-CONFIG_PACKAGE_nginx-util=m
 CONFIG_PACKAGE_nload=y
 CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_partx-utils=m
@@ -109,42 +95,9 @@ CONFIG_PACKAGE_rpcd-mod-iwinfo=y
 CONFIG_PACKAGE_rpcd-mod-luci=y
 CONFIG_PACKAGE_rpcd-mod-rrdns=y
 CONFIG_PACKAGE_rpcd-mod-ucode=y
-CONFIG_PACKAGE_shadow=y
-CONFIG_PACKAGE_shadow-chage=y
-CONFIG_PACKAGE_shadow-chfn=y
-CONFIG_PACKAGE_shadow-chgpasswd=y
-CONFIG_PACKAGE_shadow-chpasswd=y
-CONFIG_PACKAGE_shadow-chsh=y
 CONFIG_PACKAGE_shadow-common=y
-CONFIG_PACKAGE_shadow-expiry=y
-CONFIG_PACKAGE_shadow-faillog=y
-CONFIG_PACKAGE_shadow-gpasswd=y
-CONFIG_PACKAGE_shadow-groupadd=y
-CONFIG_PACKAGE_shadow-groupdel=y
-CONFIG_PACKAGE_shadow-groupmems=y
-CONFIG_PACKAGE_shadow-groupmod=y
-CONFIG_PACKAGE_shadow-groups=y
-CONFIG_PACKAGE_shadow-grpck=y
-CONFIG_PACKAGE_shadow-grpconv=y
-CONFIG_PACKAGE_shadow-grpunconv=y
-CONFIG_PACKAGE_shadow-lastlog=y
-CONFIG_PACKAGE_shadow-login=y
-CONFIG_PACKAGE_shadow-logoutd=y
-CONFIG_PACKAGE_shadow-newgidmap=y
-CONFIG_PACKAGE_shadow-newgrp=y
-CONFIG_PACKAGE_shadow-newuidmap=y
-CONFIG_PACKAGE_shadow-newusers=y
-CONFIG_PACKAGE_shadow-nologin=y
-CONFIG_PACKAGE_shadow-passwd=y
-CONFIG_PACKAGE_shadow-pwck=y
-CONFIG_PACKAGE_shadow-pwconv=y
-CONFIG_PACKAGE_shadow-pwunconv=y
-CONFIG_PACKAGE_shadow-su=y
-CONFIG_PACKAGE_shadow-useradd=y
-CONFIG_PACKAGE_shadow-userdel=y
 CONFIG_PACKAGE_shadow-usermod=y
 CONFIG_PACKAGE_shadow-utils=y
-CONFIG_PACKAGE_shadow-vipw=y
 CONFIG_PACKAGE_tc-tiny=m
 CONFIG_PACKAGE_tcpdump=y
 CONFIG_PACKAGE_terminfo=y
@@ -153,17 +106,11 @@ CONFIG_PACKAGE_ucode-mod-html=y
 CONFIG_PACKAGE_ucode-mod-math=y
 CONFIG_PACKAGE_uhttpd=y
 CONFIG_PACKAGE_uhttpd-mod-ubus=y
-CONFIG_PACKAGE_uwsgi=m
-CONFIG_PACKAGE_uwsgi-cgi-plugin=m
-CONFIG_PACKAGE_uwsgi-luci-support=m
-CONFIG_PACKAGE_uwsgi-syslog-plugin=m
-CONFIG_PACKAGE_wpad-basic-mbedtls=m
 CONFIG_PACKAGE_wpad-mbedtls=y
 CONFIG_PACKAGE_xdp-filter=m
 CONFIG_PACKAGE_xdp-loader=m
 CONFIG_PACKAGE_xdpdump=m
 CONFIG_PACKAGE_zlib=m
-CONFIG_PACKAGE_zyxel-bootconfig=m
 CONFIG_REPRODUCIBLE_DEBUG_INFO=y
 CONFIG_SDK=y
 CONFIG_SDK_LLVM_BPF=y
@@ -187,10 +134,41 @@ CONFIG_VERSION_MANUFACTURER=""
 CONFIG_VERSION_MANUFACTURER_URL=""
 CONFIG_VERSION_NUMBER=""
 CONFIG_VERSION_PRODUCT=""
-CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/23.05.2"
+CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/23.05.3"
 CONFIG_VERSION_SUPPORT_URL=""
-CONFIG_shadow-all=y
-CONFIG_PACKAGE_batctl-default=m
+# CONFIG_PACKAGE_shadow-chage is not set
+# CONFIG_PACKAGE_shadow-chfn is not set
+# CONFIG_PACKAGE_shadow-chgpasswd is not set
+# CONFIG_PACKAGE_shadow-chpasswd is not set
+# CONFIG_PACKAGE_shadow-chsh is not set
+# CONFIG_PACKAGE_shadow-expiry is not set
+# CONFIG_PACKAGE_shadow-faillog is not set
+# CONFIG_PACKAGE_shadow-gpasswd is not set
+# CONFIG_PACKAGE_shadow-groupadd is not set
+# CONFIG_PACKAGE_shadow-groupdel is not set
+# CONFIG_PACKAGE_shadow-groupmems is not set
+# CONFIG_PACKAGE_shadow-groupmod is not set
+# CONFIG_PACKAGE_shadow-groups is not set
+# CONFIG_PACKAGE_shadow-grpck is not set
+# CONFIG_PACKAGE_shadow-grpconv is not set
+# CONFIG_PACKAGE_shadow-grpunconv is not set
+# CONFIG_PACKAGE_shadow-lastlog is not set
+# CONFIG_PACKAGE_shadow-login is not set
+# CONFIG_PACKAGE_shadow-logoutd is not set
+# CONFIG_PACKAGE_shadow-newgidmap is not set
+# CONFIG_PACKAGE_shadow-newgrp is not set
+# CONFIG_PACKAGE_shadow-newuidmap is not set
+# CONFIG_PACKAGE_shadow-newusers is not set
+# CONFIG_PACKAGE_shadow-nologin is not set
+# CONFIG_PACKAGE_shadow-passwd is not set
+# CONFIG_PACKAGE_shadow-pwck is not set
+# CONFIG_PACKAGE_shadow-pwconv is not set
+# CONFIG_PACKAGE_shadow-pwunconv is not set
+# CONFIG_PACKAGE_shadow-su is not set
+# CONFIG_PACKAGE_shadow-useradd is not set
+# CONFIG_PACKAGE_shadow-userdel is not set
+# CONFIG_PACKAGE_shadow-vipw is not set
+# CONFIG_PACKAGE_zyxel-bootconfig is not set
 # CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_acelink_ew-7886cax is not set
 # CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_acer_predator-w6 is not set
 # CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_asus_rt-ax59u is not set
@@ -226,3 +204,4 @@ CONFIG_PACKAGE_batctl-default=m
 # CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_zyxel_ex5601-t0-ubootmod is not set
 # CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_zyxel_ex5700-telenor is not set
 # CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_zyxel_nwa50ax-pro is not set
+# CONFIG_shadow-all is not set
